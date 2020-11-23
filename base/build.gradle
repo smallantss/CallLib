@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation rootProject.ext.dependencies.kotlin
+    implementation rootProject.ext.dependencies.ktx
+    implementation rootProject.ext.dependencies.appcompat
+    implementation rootProject.ext.dependencies.recyclerview
+    implementation rootProject.ext.dependencies.constraintlayout
+    implementation rootProject.ext.dependencies.livedata
+    implementation rootProject.ext.dependencies.viewmodel
+    implementation rootProject.ext.dependencies.eventbus
+    implementation rootProject.ext.dependencies.utilcode
+    implementation rootProject.ext.dependencies.autosize
+    implementation rootProject.ext.dependencies.bindadapter
+    implementation rootProject.ext.dependencies.rvbindadapter
+    implementation rootProject.ext.dependencies.retrofit
+    implementation rootProject.ext.dependencies.gsonconverter
+    implementation rootProject.ext.dependencies.loginterceptor
+    implementation rootProject.ext.dependencies.logger
+    implementation rootProject.ext.dependencies.glide
+//    implementation files(rootProject.ext.dependencies.bdtts)
+    kapt rootProject.ext.dependencies.glidecompile
+    implementation rootProject.ext.dependencies.rxjava
+    implementation rootProject.ext.dependencies.rxandroid
+    implementation rootProject.ext.dependencies.rxhttp
+    implementation rootProject.ext.dependencies.rxlife
+    kapt rootProject.ext.dependencies.rxhttpcompiler
+    implementation rootProject.ext.dependencies.truetime
+//    implementation rootProject.ext.dependencies.calllib
+    implementation rootProject.ext.dependencies.buglysdk
+    implementation rootProject.ext.dependencies.buglyndk
+//    implementation files(rootProject.ext.dependencies.netty)
+    debugImplementation rootProject.ext.dependencies.leakcanary
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+}
