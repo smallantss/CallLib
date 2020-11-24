@@ -37,8 +37,8 @@ class CountDownHelper private constructor() {
 //        }
     }
 
-    private lateinit var operate:()->Unit
-    fun withoutOperate(method:()->Unit){
+    private var operate: () -> Unit = {}
+    fun withoutOperate(method: () -> Unit) {
         operate = method
     }
 

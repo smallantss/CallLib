@@ -1,6 +1,9 @@
 package com.witted.utils
 
+import android.view.View
+import android.view.ViewGroup
 import android.widget.EditText
+import androidx.core.view.children
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
@@ -10,10 +13,6 @@ import com.witted.base.BaseRootActivity
  * EditText的辅助类
  */
 class EditTextHelper(private val owner: BaseRootActivity) : LifecycleObserver {
-
-    init {
-        owner.lifecycle.addObserver(this)
-    }
 
     var et: EditText? = null
         set(value) {
@@ -36,6 +35,28 @@ class EditTextHelper(private val owner: BaseRootActivity) : LifecycleObserver {
         //停止输入
         owner.startCountDown()
     })
+
+    private val mEtList = ArrayList<EditText>()
+
+    init {
+        owner.lifecycle.addObserver(this)
+//        val root = (owner.window.decorView as FrameLayout)
+//        addEt(root)
+//        etList = mEtList
+    }
+
+    private fun addEt(root: View) {
+        if (root is ViewGroup) {
+            val iterator = root.children.iterator()
+            while (iterator.hasNext()) {
+                val i = iterator.next()
+                addEt(i)
+            }
+        } else if (root is EditText) {
+            mEtList.add(root)
+        }
+    }
+
 
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     fun onPause() {
