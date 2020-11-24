@@ -29,11 +29,17 @@ class CountDownHelper private constructor() {
         if (blockCount) {
             return
         }
+        operate()
 //        ActivityManager.currentActivity()?.let {
 //            if (it !is MainActivity) {
 //                it.startActivity(Intent(it, MainActivity::class.java))
 //            }
 //        }
+    }
+
+    private lateinit var operate:()->Unit
+    fun withoutOperate(method:()->Unit){
+        operate = method
     }
 
     //检测事件

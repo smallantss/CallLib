@@ -11,7 +11,7 @@ import com.witted.base.ext.hideNavigation
 import com.witted.base.ext.loge
 import com.witted.base.ext.openWifi
 import com.witted.base.ext.toast
-import com.witted.receiver.NetworkReceiver
+import com.witted.receiver.NetReceiver
 import com.witted.utils.*
 import com.witted.widget.LoadingDialog
 import org.greenrobot.eventbus.EventBus
@@ -20,14 +20,14 @@ import org.greenrobot.eventbus.EventBus
  * 所有基类的顶级父类
  */
 abstract class BaseRootActivity : AppCompatActivity(),
-    NetworkReceiver.NetworkCallback {
+    NetReceiver.NetworkCallback {
 
     private lateinit var etHelper: EditTextHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         etHelper = EditTextHelper(this)
-        NetworkReceiver.getInstance().register(this, this)
+        NetReceiver.getInstance().register(this, this)
         hideNavigation()
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         beforeSetContentView()

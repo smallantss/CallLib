@@ -16,25 +16,25 @@ import org.jetbrains.annotations.NotNull;
 /**
  * 监听反馈当前网络连接状态
  */
-public class NetworkReceiver extends BroadcastReceiver {
+public class NetReceiver extends BroadcastReceiver {
 
-    private volatile static NetworkReceiver receiver;
+    private volatile static NetReceiver receiver;
     private NetworkCallback networkCallback;
     private ConnectivityManager.NetworkCallback callback;
     private volatile boolean registered = false;
 
-    public static NetworkReceiver getInstance() {
+    public static NetReceiver getInstance() {
         if (receiver == null) {
-            synchronized (NetworkReceiver.class) {
+            synchronized (NetReceiver.class) {
                 if (receiver == null) {
-                    receiver = new NetworkReceiver();
+                    receiver = new NetReceiver();
                 }
             }
         }
         return receiver;
     }
 
-    private NetworkReceiver() {
+    private NetReceiver() {
 
     }
 

@@ -6,7 +6,7 @@ import android.content.Context
 import com.witted.base.ext.loge
 import com.witted.base.ext.sendBroadcastAction
 import com.witted.base.ext.showSystemNavigation
-import com.witted.receiver.NetworkReceiver
+import com.witted.receiver.NetReceiver
 import java.lang.Exception
 import java.util.*
 import kotlin.system.exitProcess
@@ -63,7 +63,7 @@ object ActivityManager {
             loge("exitApp")
             activity.sendBroadcastAction(ACTION_EXIT)
             activity.showSystemNavigation()
-            NetworkReceiver.getInstance().unRegister(activity)
+            NetReceiver.getInstance().unRegister(activity)
             val am = activity.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
             am.killBackgroundProcesses(activity.packageName)
             android.os.Process.killProcess(android.os.Process.myPid())
