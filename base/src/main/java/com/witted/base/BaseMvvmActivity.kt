@@ -6,8 +6,8 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.witted.base.ext.hideInput
-import com.witted.base.ext.toast
+import com.witted.ext.hideInput
+import com.witted.ext.toast
 import java.lang.reflect.ParameterizedType
 import kotlin.properties.Delegates
 

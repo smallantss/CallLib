@@ -2,7 +2,7 @@ package com.witted.base
 
 import android.os.Bundle
 import androidx.lifecycle.*
-import com.witted.base.ext.loge
+import com.witted.ext.loge
 import com.witted.bean.BaseResponse
 import com.witted.bean.ErrorBean
 import com.witted.net.ErrorFactory

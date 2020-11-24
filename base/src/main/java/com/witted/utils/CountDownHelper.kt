@@ -1,7 +1,6 @@
 package com.witted.utils
 
-import android.content.Intent
-import com.witted.base.ext.logd
+import com.witted.ext.logd
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable

@@ -3,9 +3,9 @@ package com.witted.utils
 import android.app.Activity
 import android.app.ActivityManager
 import android.content.Context
-import com.witted.base.ext.loge
-import com.witted.base.ext.sendBroadcastAction
-import com.witted.base.ext.showSystemNavigation
+import com.witted.ext.loge
+import com.witted.ext.sendBroadcastAction
+import com.witted.ext.showSystemNavigation
 import com.witted.receiver.NetReceiver
 import java.lang.Exception
 import java.util.*

@@ -1,4 +1,4 @@
-package com.witted.base.ext
+package com.witted.ext
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -47,32 +47,34 @@ fun toast(msg: CharSequence) {
     ToastUtils.showShort(msg)
 }
 
+var debug: Boolean = true
+
 fun loge(msg: String) {
-    if (BuildConfig.DEBUG) {
+    if (debug) {
         Log.e("TAG", msg)
     }
 }
 
 fun logd(msg: String) {
-    if (BuildConfig.DEBUG) {
+    if (debug) {
         Log.d("TAG", msg)
     }
 }
 
 fun logw(msg: String) {
-    if (BuildConfig.DEBUG) {
+    if (debug) {
         Log.w("TAG", msg)
     }
 }
 
 fun logv(msg: String) {
-    if (BuildConfig.DEBUG) {
+    if (debug) {
         Log.v("TAG", msg)
     }
 }
 
 fun logi(msg: String) {
-    if (BuildConfig.DEBUG) {
+    if (debug) {
         Log.i("TAG", msg)
     }
 }

@@ -11,8 +11,8 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.witted.base.ext.hideInput
-import com.witted.base.ext.toast
+import com.witted.ext.hideInput
+import com.witted.ext.toast
 import com.witted.utils.CleanLeakUtils
 import com.witted.widget.LoadingDialog
 import java.lang.reflect.ParameterizedType

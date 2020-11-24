@@ -1,6 +1,5 @@
 package com.witted.widget
 
-import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.LayoutInflater
@@ -9,7 +8,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
 import com.witted.base.R
-import com.witted.base.ext.hideNavigation
+import com.witted.ext.hideNavigation
 import com.witted.utils.CleanLeakUtils
 import kotlinx.android.synthetic.main.layout_loading.view.*
 

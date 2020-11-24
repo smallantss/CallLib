@@ -7,10 +7,10 @@ import android.view.WindowManager
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
-import com.witted.base.ext.hideNavigation
-import com.witted.base.ext.loge
-import com.witted.base.ext.openWifi
-import com.witted.base.ext.toast
+import com.witted.ext.hideNavigation
+import com.witted.ext.loge
+import com.witted.ext.openWifi
+import com.witted.ext.toast
 import com.witted.receiver.NetReceiver
 import com.witted.utils.*
 import com.witted.widget.LoadingDialog
